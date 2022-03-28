@@ -11,6 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class BaseClass {
@@ -21,8 +22,18 @@ public class BaseClass {
 	public static WebDriverWait wait;
 	public static String Browser;
 	public static String BrowserName;
+	public String User_Name;
+	public String AccessKey;
+	public String hub;
+	
 	@BeforeClass(alwaysRun = true)
-	@Test
+	public void validateSauceCred() {
+		User_Name="oauth-vani_ket-3e468";
+		AccessKey="8e176690-ece8-423e-846d-3910030becb6";		
+		hub="https://"+User_Name+":"+AccessKey+"@ondemand.eu-central-1.saucelabs.com:443/wd/hub";
+	}
+	
+	@BeforeTest
 	public void setUp() throws Throwable {
 		Browser=System.getProperty("Browser");
 		MutableCapabilities sauceCap=new MutableCapabilities();
