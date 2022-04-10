@@ -10,13 +10,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class VerifyGoogle {
+import Utilities.BaseClass;
+
+public class VerifyGoogle extends BaseClass {
 public WebDriver driver;
 
-@Test
-public void definebrowser() {
 
-}
 @Test
 	public void OpenGoogle( ) throws IOException {
 	Properties pro=new Properties();

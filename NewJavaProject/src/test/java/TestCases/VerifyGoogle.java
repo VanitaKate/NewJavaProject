@@ -10,15 +10,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class VerifyGoogle {
+import Utilities.BaseClass;
+
+public class VerifyGoogle extends BaseClass{
 public WebDriver driver;
 
-@Test
-public void definebrowser() {
-
+public void printTest() {
+	System.out.println("Inside printtest");
 }
 @Test
-	public void OpenGoogle( ) throws IOException {
+public void OpenGoogle( ) throws IOException {
 	Properties pro=new Properties();
 	
 	System.out.println("==================="+System.getProperty("user.dir")+"\\src\\main\\resources\\config.properties"+"===================");
